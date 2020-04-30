@@ -6,7 +6,7 @@ import requests
 import string
 import hashlib
 
-api_url_base = 'https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=006302976f90a5a0dc663f235e93a5e43bb73182'
+api_url_base = 'https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=TOKEN'
 alfabeto = string.ascii_lowercase
 resultado = ''
 response = requests.get(api_url_base)
@@ -42,4 +42,4 @@ def fraseDecifrada(arquivo):                      #Função que cria o arquivo J
 
 fraseDecifrada(response_json)
 
-r = requests.post('https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=006302976f90a5a0dc663f235e93a5e43bb73182', files={"answer": open("answer.json", "rb")})
+r = requests.post('https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=TOKEN', files={"answer": open("answer.json", "rb")})
